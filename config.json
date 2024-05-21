@@ -1,0 +1,6 @@
+{
+  "VIDEO_DIR": "./resources/downloaded_video_dir",
+  "AUDIO_DIR": "./resources/audio_dir",
+  "OUTPUT_DIR": "",
+  "PARAMS_JSON_PATH": "./params.json"
+}
