@@ -4,16 +4,15 @@ import json
 from enum import Enum
 
 
-config = json_read('config.json')
+with open('config.json') as file:
+    config = json.load(file)
 
 VIDEO_DIR = config['VIDEO_DIR']
 AUDIO_DIR = config['AUDIO_DIR']
-OUTPUT_DIR = config['OUTPUT_DIR']
 PARAMS_JSON_PATH = config['PARAMS_JSON_PATH']
 
-os.makedirs(VIDEO_DIR, exists_ok=True)
-os.makedirs(AUDIO_DIR, exists_ok=True)
-os.makedirs(OUTPUT_DIR, exists_ok=True)
+os.makedirs(VIDEO_DIR, exist_ok=True)
+os.makedirs(AUDIO_DIR, exist_ok=True)
 
 
 def json_read(json_path):
