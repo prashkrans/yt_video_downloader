@@ -1,28 +1,34 @@
 # import argparse
-from pytube import YouTube as yt
+from yt_dlp import YoutubeDL
 from _utils import VIDEO_DIR, PARAMS_JSON_PATH, json_read, json_write
 
-def download_video(yt_video_url, file_name):
-
-    # video = yt(yt_video_url).streams.filter(res="360p", progressive=True).first() # This downloads in 360p with audio
-    video = yt(yt_video_url).streams.get_highest_resolution() # This downloads in 720p with audio # Using 720p downloads here
-    # video = yt(yt_video_url).streams.filter(res="1080").first() # This downloads in 1080p without audio
+def download_video(yt_video_url, file_name, resolution=360):
     try:
+        format='mp4'
         print('Download in progress')
+        downloaded_video_path_wo_ext = f'{VIDEO_DIR}/{file_name}'
         downloaded_video_path = f'{VIDEO_DIR}/{file_name}.mp4'
-        video.download(VIDEO_DIR, filename=f'{file_name}.mp4')
+        print(f'resolution = {resolution}')
+        ydl_opts = {
+            # 'format': f'bestvideo[height<={resolution}]+bestaudio/best[height<={resolution}]',
+            'format': f'bestvideo[height<={resolution}]+bestaudio[ext=m4a]',
+            'outtmpl': downloaded_video_path_wo_ext,
+            'merge_output_format': format,
+        }
+        with YoutubeDL(ydl_opts) as ydl:
+            ydl.download(yt_video_url)
         print("Video downloaded successfully")
+        print(f"downloaded_video_path: {downloaded_video_path}")
         return downloaded_video_path
     except:
         print("Failed to download video")
-
 
 if __name__ == "__main__":
     params_dict = json_read(PARAMS_JSON_PATH)
     yt_video_url = params_dict['YT_VIDEO_URL']
     file_name = params_dict['FILE_NAME']
 
-    download_video(yt_video_url, file_name)
+    download_video(yt_video_url, file_name, 360)
 
 
     ##################################################################

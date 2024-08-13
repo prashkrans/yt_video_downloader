@@ -2,9 +2,7 @@ from moviepy.editor import VideoFileClip
 from _utils import FILE_TYPE, VIDEO_DIR, AUDIO_DIR, PARAMS_JSON_PATH, get_file_from_dir, json_read
 
 # Function to extract audio from a YouTube video
-def extract_audio():
-    params_dict = json_read(PARAMS_JSON_PATH)
-    file_name = params_dict['FILE_NAME']
+def extract_audio(file_name):
     video_file = get_file_from_dir(VIDEO_DIR, file_name, FILE_TYPE.VIDEO)
     video_file_path = f'{VIDEO_DIR}/{video_file}'
     print(f'Found {video_file}')
@@ -24,5 +22,7 @@ def extract_audio():
         return None
 
 if __name__ == "__main__":
-    extract_audio()
+    params_dict = json_read(PARAMS_JSON_PATH)
+    file_name = params_dict['FILE_NAME']
+    extract_audio(file_name)
 

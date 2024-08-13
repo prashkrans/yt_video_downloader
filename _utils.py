@@ -14,6 +14,11 @@ PARAMS_JSON_PATH = config['PARAMS_JSON_PATH']
 os.makedirs(VIDEO_DIR, exist_ok=True)
 os.makedirs(AUDIO_DIR, exist_ok=True)
 
+resolution_map = {
+    "SD": "480",
+    "HD": "720",
+    "FHD": "1080"
+}
 
 def json_read(json_path):
     with open(json_path, 'r', encoding='utf-8') as file:
