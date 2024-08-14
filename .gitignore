@@ -2,3 +2,5 @@
 __pycache__/
 resources/
 params.json
+archived_codes/
+env_yt/
