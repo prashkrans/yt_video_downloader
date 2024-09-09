@@ -55,4 +55,4 @@ interface = gr.Interface(
     and/or audio 
     """
 )
-interface.queue(api_open=False).launch(server_port=7880) # Local launch | Different server_port from auto_subs
+interface.queue(api_open=False).launch(server_port=7870) # Local launch | Different server_port from auto_subs
