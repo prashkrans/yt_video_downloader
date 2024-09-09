@@ -1,5 +1,6 @@
-import os
 import json
+import os
+import shutil
 
 from enum import Enum
 
@@ -50,3 +51,10 @@ def get_file_from_dir(dir, file_name, file_type):
             (file_type == file_type.JSON and file == f'{file_name}.json'):
 
             return file
+
+def clear_resources():
+    if os.path.exists('resources'):
+        shutil.rmtree('resources')
+    os.makedirs(VIDEO_DIR, exist_ok=True)
+    os.makedirs(AUDIO_DIR, exist_ok=True)
+

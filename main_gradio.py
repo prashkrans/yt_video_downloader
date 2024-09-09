@@ -2,7 +2,7 @@ import gradio as gr
 
 from _1_download_yt_video import download_video
 from _2_extract_audio_from_yt_video import extract_audio
-from _utils import PARAMS_JSON_PATH, json_write, resolution_map
+from _utils import PARAMS_JSON_PATH, json_write, resolution_map, clear_resources
 
 
 def download_yt_video(
@@ -10,6 +10,7 @@ def download_yt_video(
     file_name,
     resolution_key
 ):
+    clear_resources()
     resolution = resolution_map[resolution_key]
     # Create dictionary
     params_dict = {
@@ -54,4 +55,4 @@ interface = gr.Interface(
     and/or audio 
     """
 )
-interface.queue(api_open=False).launch(server_port=7870) # Local launch | Different server_port from auto_subs
+interface.queue(api_open=False).launch(server_port=7880) # Local launch | Different server_port from auto_subs

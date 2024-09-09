@@ -1,6 +1,7 @@
 .idea/
 __pycache__/
 resources/
+resources_backup/
 params.json
 archived_codes/
 env_yt/

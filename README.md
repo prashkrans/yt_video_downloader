@@ -1,8 +1,14 @@
 # Youtube Video Downloader
 - A Python gradio app that downloads YouTube videos given their URL.
 - It also provides an option to download only the audio track for the given video URL.
+
 ### Demo Video:
 https://github.com/user-attachments/assets/b5ba3a77-83d5-4a8a-939f-c914dee08665
+
+### Pre-requisites:
+FFMPEG:
+`sudo apt install ffmpeg`
+
 ### Setup:
 - Clone the repo and move to the root dir.
 - Create a python virtual environment.
