@@ -27,3 +27,4 @@ FFMPEG:
 ### Note:
 - Replaced pytube with yt-dlp (which is a fork of youtube-dl but better)
 - Simply install the requirements as the versions mentioned, it'd work fine
+- Error: Sign in to confirm you’re not a bot. This helps protect our community. Learn more. Fix: Simply update yt-dlp version.
