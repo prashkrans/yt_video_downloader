@@ -1,4 +1,4 @@
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 from _utils import FILE_TYPE, VIDEO_DIR, AUDIO_DIR, PARAMS_JSON_PATH, get_file_from_dir, json_read
 
 # Function to extract audio from a YouTube video
