@@ -34,7 +34,6 @@ def download_yt_video(
     )
 
 interface = gr.Interface(
-    # theme=gr.themes.Monochrome(), // latest gradio version doesn't support themes
     fn = download_yt_video,
     inputs = [
         gr.Textbox(label="Input YT Video URL"),
@@ -55,4 +54,17 @@ interface = gr.Interface(
     and/or audio 
     """
 )
-interface.queue(api_open=False).launch(server_port=7870) # Local launch | Different server_port from auto_subs
+
+interface.queue(api_open=False).launch(
+    theme=gr.themes.Glass(),
+    server_port=7870
+) # Local launch | Different server_port from auto_subs
+
+"""
+Gradio Themes:
+— gr.themes.Base()
+— gr.themes.Default()
+— gr.themes.Glass()
+— gr.themes.Monochrome()
+— gr.themes.Soft()
+"""
