@@ -4,4 +4,4 @@ resources/
 resources_backup/
 params.json
 archived_codes/
-env_yt/
+.env_yt/

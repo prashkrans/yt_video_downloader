@@ -7,7 +7,28 @@ https://github.com/user-attachments/assets/b5ba3a77-83d5-4a8a-939f-c914dee08665
 
 ### Pre-requisites:
 FFMPEG:
-`sudo apt install ffmpeg`
+a. Linux (Debian 13.0): `sudo apt install ffmpeg`  
+b. MacOS (Tahoe 26.1)  
+1. Install Brew: 
+   1. Open terminal and paste: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+   2. Provide sudo password and wait for the installation to finish.
+   3. Next steps: Run these commands in your terminal to add Homebrew to your PATH:
+   ```
+    echo >> /Users/mac_m4/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/mac_m4/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+   ```
+   4. Run `brew help` to get started
+
+2. Use brew to install ffmpeg:`brew install ffmpeg`  
+Verify ffmpeg version:  
+a. Linux (Debian 13.0): `ffmpeg --version`  
+b. MacOS (Tahoe 26.1): `ffmpeg -version`
+
+3. For MacOS (Tahoe 26.1) only: 
+   1. `nano ~/.zshrc`
+   2. Add the line `export PATH="/opt/homebrew/bin:$PATH"`, save and exit
+   3. `source ~/.zshrc`
 
 ### Setup:
 - Clone the repo and move to the root dir.

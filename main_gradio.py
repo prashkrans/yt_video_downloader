@@ -34,7 +34,7 @@ def download_yt_video(
     )
 
 interface = gr.Interface(
-    theme=gr.themes.Monochrome(),
+    # theme=gr.themes.Monochrome(), // latest gradio version doesn't support themes
     fn = download_yt_video,
     inputs = [
         gr.Textbox(label="Input YT Video URL"),
