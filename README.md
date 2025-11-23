@@ -6,7 +6,7 @@
 https://github.com/user-attachments/assets/b5ba3a77-83d5-4a8a-939f-c914dee08665
 
 ### Pre-requisites:
-FFMPEG:
+**FFMPEG:**  
 a. Linux (Debian 13.0): `sudo apt install ffmpeg`  
 b. MacOS (Tahoe 26.1)  
 1. Install Brew: 
